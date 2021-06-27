@@ -6,8 +6,10 @@ const fs = require('fs');
 const mnemonic = fs.existsSync('.secret')
     ? fs.readFileSync('.secret').toString().trim()
     : null;
+const path = require("path");
 
 module.exports = {
+  contracts_build_directory: path.join(__dirname, "client/src/contracts"),
   networks: {
     development: {           // Ganache CLI is recommended
       host: '127.0.0.1',     // Localhost
@@ -20,9 +22,9 @@ module.exports = {
         mnemonic, `https://kovan.infura.io/v3/2a34155324e24e37a26058e4936f712b`
       ),
       network_id: 42,       // Kovan's id
-      gas: 5500000,        // 
-      confirmations: 0,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      gas: 5500000,         //
+      confirmations: 0,     // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,   // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: false,    // Skip dry run before migrations? (default: false for public nets )
     },
   },
