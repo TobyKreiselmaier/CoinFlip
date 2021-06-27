@@ -1,6 +1,6 @@
 # CoinFlip
 
-Project to simulate randomness in a game.
+Project to simulate randomness in a game and web3 calls in React.
 
 - Two players (ETH wallet addresses) can participate in this CoinFlip game.
 - They both must stake collateral (ETH) to play.
@@ -19,7 +19,7 @@ Project to simulate randomness in a game.
 5. Run `yarn compile` to compile the contracts in the local *contracts* folder with truffle.
 6. Run `yarn test` to compile and run all automated tests in the *test* folder (recommended NodeJS version 12).
 7. Run `yarn migrate` to deploy the contracts to the local *ganache* blockchain, which will run on port 8545.
-8. Run `yarn migrate --network Kovan` to deploy the contracts to the public Kovan testnet.
+8. Run `yarn migrate --network Kovan` to deploy the contracts to the public *Kovan* testnet.
 
 ### Optional:
 
@@ -30,10 +30,10 @@ Project to simulate randomness in a game.
     - adust constructor arguments (CoinFlip.sol lines 36-41) for desired number of players.
     - adjust migration arguments (2_CoinFlip_migration.js lines 9-11) for desired number of players.
     - adjust accounts created by Ganache (currently 12 available).
-    - tests are currently designed for two player mode only.
+    - tests are currently designed for the two player mode only.
 
-3. Migration automatically deploys and ERC20 `CoinFlip Token (CFT)`, which can also be used as collateral.
+3. Migration automatically deploys an ERC20 `CoinFlip Token (CFT)`, which can be used as collateral using `safeTransferFrom`.
 
-4. Loser pays for winners gas: https://github.com/bitclave/Feeless.
+4. `LoserPays.sol` contains some ideas about a feeless transfer of the jackpot to the winner.
 
-5. ToDo: Swap between ETH and CFT.
+5. Future: Swap between ETH and CFT.
