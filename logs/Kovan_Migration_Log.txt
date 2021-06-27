@@ -1,0 +1,217 @@
+KOVAN Migration
+
+$ truffle migrate --network kovan
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'kovan-fork'
+> Network id:      42
+> Block gas limit: 12487794 (0xbe8c72)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > block number:        25760504
+   > block timestamp:     1624827583
+   > account:             0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+   > balance:             1.999532316
+   > gas used:            233842 (0x39172)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000467684 ETH
+
+   -------------------------------------
+   > Total cost:         0.000467684 ETH
+
+
+2_CoinFlip_migration.js
+=======================
+
+   Deploying 'CoinFlip'
+   --------------------
+   > block number:        25760506
+   > block timestamp:     1624827589
+   > account:             0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+   > balance:             1.995825708
+   > gas used:            1825791 (0x1bdbff)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.003651582 ETH
+
+
+Migration of CoinFlip Contract
+******************************
+
+Contract Address: 0x92Df2Fc31A8Fc161d6d028Ff233c2A4e32dD8F62
+Contract Owner: 0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+Number of players: 2
+Player 0: 0x15F6eB7CAB1a4a28E27359A48Ea1cF2Ec657E37d
+Player 1: 0x301994de3460301183ce2089EC789a3036B56898
+
+Migration Completed Successfully!
+*********************************
+   -------------------------------------
+   > Total cost:         0.003651582 ETH
+
+
+3_CoinFlipToken_migration.js
+============================
+
+   Deploying 'ERC20'
+   -----------------
+   > block number:        25760508
+   > block timestamp:     1624827596
+   > account:             0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+   > balance:             1.993325568
+   > gas used:            1222557 (0x12a79d)
+   > gas price:           2 gwei
+   > value sent:          0 ETH
+   > total cost:          0.002445114 ETH
+
+
+Migration of CoinFlip Token
+***************************
+
+Token Address: 0x505633eE85DB9F537A5219C2a49b8B8984877081
+Token Owner: 0x15F6eB7CAB1a4a28E27359A48Ea1cF2Ec657E37d
+Token Name: CoinFlip Token
+Token Symbol: CFT
+Token Decimals: 18
+Token TotalSupply: 10000000
+
+Migration Completed Successfully!
+*********************************
+   -------------------------------------
+   > Total cost:         0.002445114 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.00656438 ETH
+
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'kovan'
+> Network id:      42
+> Block gas limit: 12500000 (0xbebc20)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xe6cd253ccc522d44620c62100c2573d3eb124442320fc4c1244b721c8b76f0ba
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x90e14c825BACc537b969c80e61590EF1BE14B07c
+   > block number:        25760507
+   > block timestamp:     1624827600
+   > account:             0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+   > balance:             1.99499716
+   > gas used:            250142 (0x3d11e)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00500284 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00500284 ETH
+
+
+2_CoinFlip_migration.js
+=======================
+
+   Deploying 'CoinFlip'
+   --------------------
+   > transaction hash:    0x5a572e69f80147cb420a95d9b2a396a5e82dc2f05fc07182876c438d6c1b5c8f
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x92Df2Fc31A8Fc161d6d028Ff233c2A4e32dD8F62
+   > block number:        25760509
+   > block timestamp:     1624827608
+   > account:             0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+   > balance:             1.95541508
+   > gas used:            1933191 (0x1d7f87)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03866382 ETH
+
+
+Migration of CoinFlip Contract
+******************************
+
+Contract Address: 0x92Df2Fc31A8Fc161d6d028Ff233c2A4e32dD8F62
+Contract Owner: 0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+Number of players: 2
+Player 0: 0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+Player 1: 0x6ACc9629eBCCDA0ff2503EC67cEc35E65eCdA651
+
+Migration Completed Successfully!
+*********************************
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.03866382 ETH
+
+
+3_CoinFlipToken_migration.js
+============================
+
+   Deploying 'ERC20'
+   -----------------
+   > transaction hash:    0x472f1513554bb494793921b800de0bc497ffb5c6442f9d9da76cfedb09f63a6b
+   > Blocks: 1            Seconds: 4
+   > contract address:    0x505633eE85DB9F537A5219C2a49b8B8984877081
+   > block number:        25760512
+   > block timestamp:     1624827620
+   > account:             0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+   > balance:             1.92908368
+   > gas used:            1287757 (0x13a64d)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.02575514 ETH
+
+
+Migration of CoinFlip Token
+***************************
+
+Token Address: 0x505633eE85DB9F537A5219C2a49b8B8984877081
+Token Owner: 0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722
+Token Name: CoinFlip Token
+Token Symbol: CFT
+Token Decimals: 18
+Token TotalSupply: 10000000
+
+Migration Completed Successfully!
+*********************************
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.02575514 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.0694218 ETH
+
+
+
+Done in 52.77s.

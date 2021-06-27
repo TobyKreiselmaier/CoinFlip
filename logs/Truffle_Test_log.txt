@@ -1,0 +1,99 @@
+TRUFFLE TEST Logs
+
+$ truffle test
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\CoinFlip.sol
+> Compiling .\contracts\NonReentrant.sol
+> Artifacts written to C:\Users\tkrei\AppData\Local\Temp\test--13064-xcULMuM0HhZa
+> Compiled successfully using:
+   - solc: 0.8.6+commit.11564f7e.Emscripten.clang
+
+
+Migration of CoinFlip Contract
+******************************
+
+Contract Address: 0x723b4A002E3aB156B53B0e19a16bAca67803f83e
+Contract Owner: 0xDB83AC0e56c2ea9B7b614004f1307E967AC7d52B
+Number of players: 2
+Player 0: 0x83eDEA6c5d10ad1879e88c801786f916E0446AF6
+Player 1: 0x5fb4b09f323F8b7dC763835c54e45F86782A190e
+
+Migration Completed Successfully!
+*********************************
+
+Migration of CoinFlip Token
+***************************
+
+Token Address: 0x059F1de28464C4C0F1EF72795c680D9E3C3B84e7
+Token Owner: 0xDB83AC0e56c2ea9B7b614004f1307E967AC7d52B
+Token Name: CoinFlip Token
+Token Symbol: CFT
+Token Decimals: 18
+Token TotalSupply: 10000000
+
+Migration Completed Successfully!
+*********************************
+
+  Contract: CoinFlip
+    insertPlayer()
+      √ inserts a player in the participating players array (72384 gas)
+      √ should NOT allow an index that is higher than the total number of players minus one (23331 gas)
+      √ should NOT allow the zero address as a player (23137 gas)
+      √ should NOT allow the contract address as a player (23402 gas)
+      √ should allow replacing one player with another player (36186 gas)
+      √ should NOT allow inserting a player that is already participating (avoids double entries) (26023 gas)
+    addCollateral()
+      √ amount can NOT be zero (21540 gas)
+      √ only participating players can add collateral (113286 gas)
+    determineActivePlayer()
+      √ should select the active player that is allowed to flip the coin (1785546 gas)
+    flipCoin()
+      √ should ensure all players have staked before the coin can be flipped (1770148 gas)
+      √ the active player can flip the coin (68301 gas)
+      √ another participating player can NOT flip the coin (22447 gas)
+      √ a stranger can NOT flip the coin (22447 gas)
+      √ should move player collaterals to jackpot (68301 gas)
+      √ should set the winner of the coin flip (68301 gas)
+    withdrawCollateral()
+      √ the winner can withdraw the collateral (30382 gas)
+      √ another participating player can NOT withdraw the collateral (22426 gas)
+      √ a stranger can NOT withdraw the collateral (22426 gas)
+      √ emits a withdrawal event (30382 gas)
+    totalPlayers()
+      √ should return the correct number of participating players (1652599 gas)
+    getPlayer()
+      √ should return the player at any given index position (1652599 gas)
+
+·----------------------------------------|----------------------------|-------------|----------------------------·
+|  Solc version: 0.8.6+commit.11564f7e   ·  Optimizer enabled: false  ·  Runs: 200  ·  Block limit: 6718946 gas  │
+·········································|····························|·············|·····························
+|  Methods                                                                                                       │
+···············|·························|··············|·············|·············|··············|··············
+|  Contract    ·  Method                 ·  Min         ·  Max        ·  Avg        ·  # calls     ·  eur (avg)  │
+···············|·························|··············|·············|·············|··············|··············
+|  CoinFlip    ·  addCollateral          ·       43190  ·      44963  ·      44053  ·          37  ·          -  │
+···············|·························|··············|·············|·············|··············|··············
+|  CoinFlip    ·  determineActivePlayer  ·           -  ·          -  ·      44794  ·          13  ·          -  │
+···············|·························|··············|·············|·············|··············|··············
+|  CoinFlip    ·  flipCoin               ·           -  ·          -  ·      68301  ·          10  ·          -  │
+···············|·························|··············|·············|·············|··············|··············
+|  CoinFlip    ·  insertPlayer           ·       36186  ·      36198  ·      36191  ·           5  ·          -  │
+···············|·························|··············|·············|·············|··············|··············
+|  CoinFlip    ·  withdrawCollateral     ·           -  ·          -  ·      30382  ·           4  ·          -  │
+···············|·························|··············|·············|·············|··············|··············
+|  Migrations  ·  setCompleted           ·           -  ·          -  ·      27513  ·           1  ·          -  │
+···············|·························|··············|·············|·············|··············|··············
+|  Deployments                           ·                                          ·  % of limit  ·             │
+·········································|··············|·············|·············|··············|··············
+|  CoinFlip                              ·           -  ·          -  ·    1652599  ·      24.6 %  ·          -  │
+·········································|··············|·············|·············|··············|··············
+|  ERC20                                 ·           -  ·          -  ·    1282557  ·      19.1 %  ·          -  │
+·········································|··············|·············|·············|··············|··············
+|  Migrations                            ·           -  ·          -  ·     248842  ·       3.7 %  ·          -  │
+·----------------------------------------|--------------|-------------|-------------|--------------|-------------·
+
+  21 passing (1m)
