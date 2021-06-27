@@ -27,7 +27,8 @@ module.exports = {
     },
   },
   mocha: {
-    useColors: true
+    useColors: true,
+    reporter: 'eth-gas-reporter'
   },
   compilers: {
     solc: {

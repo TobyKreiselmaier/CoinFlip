@@ -14,6 +14,8 @@ module.exports = async function (deployer, network, accounts) {
 
     let owner, name, symbol, decimals, supply;
     
+    console.log('\nMigration of CoinFlip Token');
+    console.log('***************************\n');
     console.log('Token Address: ' + instance.address);
     owner = await instance.owner();
     console.log('Token Owner: ' + owner);

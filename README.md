@@ -11,8 +11,10 @@ Project to simulate randomness in a game.
 ## Installation - Tests - Deployment
 
 1. Git clone repo with `git clone https://github.com/TobyKreiselmaier/CoinFlip.git`
-2. Make sure `yarn` is installed (npm install --global yarn) (yarn is more stable and faster than npm)
-3. Run `yarn` to install the necessary dependencies for the project.
+2. Install `yarn` (npm install --global yarn) (yarn is more stable and faster than npm).
+3. Install `truffle` (yarn global add truffle).
+4. Install `ganache` (yarn global add ganache-cli).
+3. Run `yarn` to install the necessary dependencies for this project.
 4. Run `yarn ganache` to start [Ganache CLI](https://github.com/trufflesuite/ganache-cli) in a separate console.
 5. Run `yarn compile` to compile the contracts in the local *contracts* folder with truffle.
 6. Run `yarn test` to compile and run all automated tests in the *test* folder (recommended NodeJS version 12).
@@ -20,4 +22,18 @@ Project to simulate randomness in a game.
 8. Run `yarn migrate --network Kovan` to deploy the contracts to the public Kovan testnet.
 
 ### Optional:
-Run `yarn console` to enter [truffle commands](https://www.trufflesuite.com/docs/truffle/reference/truffle-commands) directly.
+
+1. Run `yarn console` to enter [truffle commands](https://www.trufflesuite.com/docs/truffle/reference/truffle-commands) directly.
+
+2. In order to play this game with more than two players, do the following:
+
+    - adust constructor arguments (CoinFlip.sol lines 36-41) for desired number of players.
+    - adjust migration arguments (2_CoinFlip_migration.js lines 9-11) for desired number of players.
+    - adjust accounts created by Ganache (currently 12 available).
+    - tests are currently designed for two player mode only.
+
+3. Migration automatically deploys and ERC20 `CoinFlip Token (CFT)`, which can also be used as collateral.
+
+4. Loser pays for winners gas: https://github.com/bitclave/Feeless.
+
+5. ToDo: Swap between ETH and CFT.

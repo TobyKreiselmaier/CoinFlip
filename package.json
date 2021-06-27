@@ -7,27 +7,26 @@
     "test": "test"
   },
   "scripts": {
-    "compile": "./node_modules/.bin/truffle compile",
-    "console": "./node_modules/.bin/truffle console",
-    "ganache": "./node_modules/.bin/ganache-cli -a 20 -e 1000000 -l 10000000",
-    "migrate": "./node_modules/.bin/truffle deploy",
-    "test": "./node_modules/.bin/truffle test"
+    "compile": "truffle compile",
+    "console": "truffle console",
+    "ganache": "ganache-cli -a 12 -e 1000000 -l 10000000",
+    "migrate": "truffle migrate",
+    "test": "truffle test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TobyKreiselmaier/CoinFlip.git"
   },
-  "author": "Toby Kreiselmaier 2021",
+  "author": "Toby Kreiselmaier",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TobyKreiselmaier/CoinFlip/issues"
   },
   "homepage": "https://github.com/TobyKreiselmaier/CoinFlip/blob/main/README.md",
   "dependencies": {
-    "@chainlink/contracts": "^0.1.9",
     "@truffle/hdwallet-provider": "1.2.3",
+    "chai": "^4.3.4",
     "eth-gas-reporter": "^0.2.22",
-    "ganache-cli": "^6.12.2",
-    "truffle": "^5.3.12"
+    "truffle-assertions": "^0.9.2"
   }
 }
