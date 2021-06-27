@@ -9,7 +9,7 @@
   "scripts": {
     "compile": "truffle compile",
     "console": "truffle console",
-    "ganache": "ganache-cli -a 12 -e 1000000 -l 10000000",
+    "ganache": "ganache-cli -a 12 -m 'puzzle turn private anxiety erase raccoon ill penalty manual fire eagle praise'",
     "migrate": "truffle migrate",
     "test": "truffle test"
   },

@@ -1,14 +1,13 @@
 const CoinFlip = artifacts.require("CoinFlip");
 const players = 2;
 
-
 module.exports = async function(deployer, network, accounts) {
 
     await deployer.deploy(
         CoinFlip,
         players,        // number of players
-        accounts[1],    // player 1
-        accounts[2]     // player 2
+        accounts[0],    // player 1
+        accounts[1]     // player 2
     );
 
     const instance = await CoinFlip.deployed();

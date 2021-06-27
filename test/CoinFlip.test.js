@@ -5,6 +5,10 @@ const zeroAddress = "0x0000000000000000000000000000000000000000";
 
 let instance, event, activePlayer, inactivePlayer, winner, loser, participant1, participant2;
 
+// using the mnemonic provided in the yarn script:
+// player1 = 0xBBA5Af54eC0Af6b833Ba44FfF934a5f2FE10D722 PK: 0x57994353d1c06d598d8bcc1738625aa4d8a76060079468052927a0e4f68bf9f4
+// player2 = 0x6ACc9629eBCCDA0ff2503EC67cEc35E65eCdA651 PK: 0x8fc2ebd50757b0685f87ef4400323ad2521df31dea170fdfbef2ccb599e704bc
+
 contract("CoinFlip", ([player1, player2, stranger, someoneElse]) => {
 
   describe("insertPlayer()", () =>{
