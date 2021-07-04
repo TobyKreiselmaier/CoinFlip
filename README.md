@@ -1,6 +1,6 @@
 # CoinFlip
 
-Project to simulate randomness in a game and web3 calls in React.
+Project to simulate randomness in a game and web3 calls in a React Front End.
 
 - Two players (ETH wallet addresses) can participate in this CoinFlip game.
 - They both must stake collateral (ETH) to play.
@@ -19,7 +19,9 @@ Project to simulate randomness in a game and web3 calls in React.
 5. Run `yarn compile` to compile the contracts in the local *contracts* folder with truffle.
 6. Run `yarn test` to compile and run all automated tests in the *test* folder (recommended NodeJS version 12).
 7. Run `yarn migrate` to deploy the contracts to the local *ganache* blockchain, which will run on port 8545.
-8. Run `yarn migrate --network Kovan` to deploy the contracts to the public *Kovan* testnet.
+8. Run `yarn migrate --network kovan` to deploy the contracts to the public *Kovan* testnet.
+9. To run the front end in your local browser `cd client` and `yarn start`. The website will appear on `http://localhost:3000/`.
+10. To test the front in (in folder `client`), run `yarn test`.
 
 ### Optional:
 
@@ -36,4 +38,4 @@ Project to simulate randomness in a game and web3 calls in React.
 
 4. `LoserPays.sol` contains some ideas about a feeless transfer of the jackpot to the winner.
 
-5. Future: Swap between ETH and CFT.
+5. Future: Swap between ETH and CFT. This would require a reliable price oracle or a hardcoded price for demonstration purposes.

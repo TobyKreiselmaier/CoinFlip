@@ -1,0 +1,8 @@
+ PASS  src/App.test.js
+  √ renders without crashing (15 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        3.604 s
+Ran all test suites.
