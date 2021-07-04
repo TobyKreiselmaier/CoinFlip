@@ -15,10 +15,13 @@ contract CoinFlip is Context, Ownable, NonReentrant {
 
     uint256 public totalPlayers;
     uint256 public jackpot;
+    uint256 public jackpotCFT;                      // would be used if CFT allowed as collateral
     address public activePlayer;
     address payable public winner;
     address[] public participatingPlayers;
+    address private coinFlipToken;                 // should be passed in constructor if CFT allowed as collateral
     mapping(address => uint) userCollaterals;
+    mapping(address => uint) userCollateralsCFT;   // would be used if CFT allowed as collateral
 
     event Withdrawal(address to, uint256 amount);
 
@@ -91,27 +94,32 @@ contract CoinFlip is Context, Ownable, NonReentrant {
         return participatingPlayers[_index];
     }
 
-    /* ERC20 safeTransferFrom function allows
-     * 1) transfer of CFT Tokens to the CoinFlip contract
-     *    token = CFT.address
-     *    from = player
-     *    to = address(this)
-     * 2) transfer of CFT Tokens to the winner
-     *    token = CFT.address
-     *    from = address(this)
-     *    to = winner
-     */
+    /* ERC20 functions to be used if CFT was allowed as collateral */
+
     function safeTransferFrom(
         address _token,
         address _from,
         address _to,
         uint256 _amount
-    ) external noReentry {
+    ) internal noReentry {
         require(_to == address(this) || _to == winner, "CoinFlip: transfer not allowed");
         // selector = bytes4(keccak256(bytes('transferFrom(address,address,uint256)')))
         (bool success, bytes memory data) = _token.call(abi.encodeWithSelector(0x23b872dd, _from, _to, _amount));
         require (success && (data.length == 0 || abi.decode(data, (bool))),
         "CoinFlip: failed to call transferFrom on CFT contract");
+    }
+
+    function addCollateralCFT(uint256 _amount) public {
+        require(_msgSender() == participatingPlayers[0] || _msgSender() == participatingPlayers[1],
+            "CoinFlip: not a participating player - can not add funds");
+        safeTransferFrom(coinFlipToken, _msgSender(), address(this), _amount);
+        userCollateralsCFT[_msgSender()] = _amount;
+    }
+
+    function withdrawCollateralCFT() public onlyWinner noReentry {
+        safeTransferFrom(coinFlipToken, address(this), winner, jackpotCFT);
+        emit Withdrawal(winner, jackpotCFT);
+        jackpotCFT = 0;
     }
 
 }
